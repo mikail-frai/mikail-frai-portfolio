@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio personnel de Frai Mikail, étudiant passionné par la technologie et le développement web.">
+    <title>Créer un Portfolio Personnel avec HTML et CSS | Frai Mikail</title>
+    
+    <!-- Importation des polices et de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden; /* Empêche le défilement horizontal */
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: flex-start; /* Aligner les éléments à gauche */
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo img {
+            height: 50px; /* Ajustez la taille de l'image selon vos besoins */
+        }
+
+        .navigation {
+            display: flex;
+            margin-left: 20px; /* Ajouter un espace entre le logo et les liens */
+        }
+
+        .navigation a {
+            font-size: 1.1em;
+            color: #555;
+            text-decoration: none;
+            margin-right: 40px;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        .navigation a:hover {
+            color: #7d2ae8;
+        }
+
+        .home {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 30px 100px;
+            background-color: #fff; /* Fond blanc */
+        }
+
+        .home .content {
+            max-width: 600px;
+            color: #555;
+            text-align: center;
+        }
+
+        .home .content h2 {
+            font-size: 4em;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .home .content h2 span {
+            color: #7d2ae8;
+            font-weight: 700;
+        }
+
+        .home .content p {
+            font-size: 1.2em;
+            padding: 10px 0 40px 0;
+            color: #000;
+            background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour améliorer la lisibilité */
+            padding: 10px; /* Espace interne */
+            border-radius: 5px; /* Coins arrondis */
+        }
+
+        .home .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .home .btn-group a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 40px;
+            background: #7d2ae8;
+            border-radius: 10px;
+            border: 2px solid #7d2ae8;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        .home .btn-group a:hover {
+            color: #7d2ae8;
+            background: transparent;
+        }
+
+        /* Modification des icônes sociales pour les placer en haut à droite */
+        .home .social-icons {
+            position: absolute;
+            top: 20px; /* Positionner les icônes à 20px du haut */
+            right: 30px;  /* Positionner les icônes à 30px du côté droit */
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .home .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #7d2ae8;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid #fff;
+            outline: 2px solid #7d2ae8;
+            transition: .3s;
+        }
+
+        .home .social-icons a:hover {
+            transform: translateY(-5px);
+        }
+
+        .home .social-icons a i {
+            color: #fff;
+        }
+
+        /* Conteneur de l'image à droite */
+        .home .image-container {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40%; /* Ajustez la largeur de l'image */
+            padding: 20px;
+        }
+
+        .home .image-container img {
+            width: 100%; /* Ajuste l'image à la largeur du conteneur */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation pour le titre */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+            .home {
+                padding: 20px;
+            }
+            .navigation a {
+                font-size: 0.9em;
+                margin-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\moko4\Pictures\images.png" alt="Logo de l'école">
+        </div>
+        <nav class="navigation">
+            <a href="#">Accueil</a>
+            <a href="#">À propos</a>
+            <a href="#">Github</a>
+            <a href="#">Curriculum Vitae</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="content">
+            <h2><span>Bonjour, je suis Frai Mikail </span></h2>
+            <h4></h4>
+            <p>Bienvenue sur mon portfolio personnel. Je suis étudiant passionné par la technologie et le développement web. J'explore constamment de nouvelles plateformes et techniques pour améliorer mes compétences.</p>
+            <div class="btn-group">
+                <a href="#">Engagez-moi</a>
+                <a href="#">Voir Projets</a>
+            </div>
+        </div>
+        <!-- Conteneur d'image à droite -->
+        <div class="image-container">
+            <img src="C:\Users\moko4\Pictures\70576261_custom.jpg" alt="Cybersecurity image">
+        </div>
+
+        <!-- Icônes sociales en haut à droite -->
+        <div class="social-icons">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:example@gmail.com" aria-label="Gmail"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </section>
+</body>
+</html>
